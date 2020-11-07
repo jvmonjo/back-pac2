@@ -57,3 +57,8 @@ public $news =[
     ];
 ```
 
+## Grocery CRUD
+
+Per a instal·lat Grocery CRUD he seguit el vídeo explicatiu de l'autor (https://www.youtube.com/watch?v=h-1q3IItG0I&t=308s&ab_channel=HappyDevelopers) i després he adaptat el controlador i la vista als nostres models (news i categories).
+
+Ell reconama desactivar les rutes automàtiques si et dona error i afegir-les manualment. En el meu cas, m'ha funcionat amb les autorutes en true.
