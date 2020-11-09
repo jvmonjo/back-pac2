@@ -62,3 +62,55 @@ public $news =[
 Per a instal·lat Grocery CRUD he seguit el vídeo explicatiu de l'autor (https://www.youtube.com/watch?v=h-1q3IItG0I&t=308s&ab_channel=HappyDevelopers) i després he adaptat el controlador i la vista als nostres models (news i categories).
 
 Ell reconama desactivar les rutes automàtiques si et dona error i afegir-les manualment. En el meu cas, m'ha funcionat amb les autorutes en true.
+
+
+## Paginació de resultats
+Per a la part de la API que opté les notícies d'una categoria específica amb paginació opcional he creat estes rutes:
+
+```php
+$routes->get('api/(:segment)', 'ApiCategory::show/$1');
+
+$routes->get('api/(:segment)/(:any)', 'ApiCategory::show/$1/$2');
+```
+
+
+i he creat aquesta funció dins del controlador:
+
+```php
+public function show($category = null, $page = null)
+    {
+        $db      = \Config\Database::connect();
+
+        // obtenim la id de la categoria
+        $categories = $db->table('categories');
+
+        $categories->where('title', $category);
+
+        $queryCategory   = $categories->get();
+
+        $catResult = $queryCategory->getResult();
+
+        if (!$catResult) {
+            return $this->genericResponse(null, "Category doesn't exist", 404);
+        }
+
+        $id = $catResult[0]->id;
+
+        
+        // obtenim les notícies amb eixa id de categoria
+        $news = $db->table('news');
+
+        $news->where('category_id', $id);
+
+        if ($page) {
+            $news->limit(10, ($page - 1) * 10);
+        }
+
+        $queryNews   = $news->get();
+
+        $newsResult = $queryNews->getResult();
+
+
+        return $this->genericResponse($newsResult, null, 200);
+    }
+```

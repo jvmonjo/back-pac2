@@ -33,6 +33,22 @@ class ApiNews extends ResourceController
         return $this->genericResponse($news, null, 200);
     }
 
+    public function category($id = null)
+    {
+        if ($id == null) {
+            return $this->genericResponse(null, "An error ocurred", 500);
+        }
+
+        $news = $this->model->find($id);
+
+        if (!$news) {
+            return $this->genericResponse(null, "That news doesn't exist", 404);
+        }
+
+
+        return $this->genericResponse('category' . $id, null, 200);
+    }
+
 
     public function create()
     {

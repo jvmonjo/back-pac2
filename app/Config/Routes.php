@@ -32,7 +32,14 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('api/(:segment)', 'ApiCategory::show/$1');
+
+$routes->get('api/(:segment)/(:any)', 'ApiCategory::show/$1/$2');
+
 $routes->resource('api/news', ['controller' => 'ApiNews']);
+
+
+
 
 // $routes->get('admin/news', 'Admin::news');
 // $routes->get('admin/news/(:any)', 'Admin::news/$1');
