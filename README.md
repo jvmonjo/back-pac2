@@ -138,6 +138,20 @@ public function index()
 
     }
 ```
+Això m'ha permés usar el següent format a la vista:
+
+```html
+    <ul>
+        {news}
+            <li>
+                <a href="{baseurl}/news/{id}" class="card">
+                <h2>{title}</h2>
+                <p>{date}</p>
+                </a>
+            </li>
+        {/news}
+    </ul>
+```
 
 Per a la vista de detalls he usat el renderitzat que proporciona la funció view:
 

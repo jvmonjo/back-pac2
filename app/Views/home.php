@@ -231,12 +231,6 @@
 				<button onclick="toggleMenu();">&#9776;</button>
 			</li>
 			<li class="menu-item hidden"><a href="{baseurl}">Home</a></li>
-			<li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/" target="_blank">Docs</a>
-			</li>
-			<li class="menu-item hidden"><a href="https://forum.codeigniter.com/" target="_blank">Community</a></li>
-			<li class="menu-item hidden"><a
-					href="https://github.com/codeigniter4/CodeIgniter4/blob/master/CONTRIBUTING.md" target="_blank">Contribute</a>
-			</li>
 		</ul>
 	</div>
 
@@ -252,15 +246,15 @@
 		<h1>News</h1>
 
 		<ul>
-    {news}
-        <li>
-			<a href="{baseurl}/news/{id}" class="card">
-			<h2>{title}</h2>
-			<p>{date}</p>
-			</a>
-		</li>
-    {/news}
-</ul>
+			{news}
+				<li>
+					<a href="{baseurl}/news/{id}" class="card">
+					<h2>{title}</h2>
+					<p>{date}</p>
+					</a>
+				</li>
+			{/news}
+		</ul>
 
 	</div>
 </main>
