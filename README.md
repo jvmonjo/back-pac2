@@ -1,3 +1,14 @@
+---
+title: PAC2. Desenv. back-end PHP 
+author: Josep Vicent Monjo Agut
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[CO,CE]{PAC2. Desenv. back-end PHP }
+    \fancyfoot[LE,RO]{\thepage}
+---
+
 # Instal·lació de CodeIgniter 4
 
 He instal·lat CodeIgniter 4 mitjançant composer
@@ -5,6 +16,8 @@ He instal·lat CodeIgniter 4 mitjançant composer
 ```bash
 composer create-project codeigniter4/appstarter project-root
 ```
+
+El procés d’instal·lació ha sigut prou senzill però menys intuïtiu que amb Wordpress ja que no hi ha una GUI d’instal·lació.
 
 # Base de dades
 
@@ -15,7 +28,7 @@ He creat una base de dades amb phpmyadmin i dins d'ella he creat les següents t
 
 He definit categoy_id com a foreign key de categories.id a la base de dades usant la pestanya relacions de phpmyadmin.
 
-# Desenvolupmanet del backend
+# Desenvolupament del backend
 
 Primer he editat el fitxer app/config/Database.php amb les credencials de la base de dades.
 
@@ -168,6 +181,12 @@ public function show($id)
 
 		return view('news-details', $data);
 			 
-	}
+    }
+```
 
 Per al correcte funcionament dels enllaços tant en l'entorn de producció com en el de desenvolupament he fet ús de la variable `app.baseURL` del fitxer `.env` que he cridat al controlador usant `getenv('app.baseURL');`
+
+Aquest document l'he realitzat a partir del README.md del projecte amb el programa Pandoc amb la següent instrucció:
+
+`pandoc -s -N --template=template.latex README.md -o Josep-Vicent-Monjo-Agut-PAC-2.pdf`
+
