@@ -1,12 +1,13 @@
 ---
 title: PAC2. Desenv. back-end PHP 
 author: Josep Vicent Monjo Agut
+date: 11-11-2020
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}
-    \fancyhead[CO,CE]{}
-    \fancyfoot[CO,CE]{PAC2. Desenv. back-end PHP }
-    \fancyfoot[LE,RO]{\thepage}
+    \fancyhead[LO,LE]{PAC2. Desenv. back-end PHP }
+    \fancyhead[RO,RE]{Josep V. Monjo}
+    \fancyfoot[CO,CE]{\thepage}
 ---
 
 # Instal·lació de CodeIgniter 4
@@ -204,7 +205,7 @@ Home: https://eimtcms.eimt.uoc.edu/~josepmonjo/
 - Crear notícia: [POST] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
 - Editar notícia: [PUT, PATCH] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
 - Eliminar notícia: [DELETE] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
-- Veure notícies d'una categoria específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/economy
+- Veure notícies d'una categoria: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/economy
 
 # Desplegament
 
@@ -215,6 +216,17 @@ Després he copiat els continguts de la carpeta `/public_html/codeigniter/public
 Per a que funcione he hagut d'editar el fitxer `.env` amb la nova `app.baseURL` així com les noves credencials de la base de dades i el canvi de environment a `CI_ENVIRONMENT=production`.
 
 Allò ideal seria que el directori de l'aplicació es trobés al mateix nivell que `/public_html, en lloc d'estar dins, per evitar que estiga públicament accessible però al servidor de proves no tenim permisos per fer-ho.
+
+També he creat un fitxer .htaccess a l'arrel de la carpeta pública per no haver d'usar index.php a la url:
+
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L] 
+</IfModule>
+```
 
 # Anotacions finals
 
