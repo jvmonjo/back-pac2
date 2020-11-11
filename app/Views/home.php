@@ -224,8 +224,15 @@
 
 <main>
 	<div class="heroe">
+		
 
 		<h1>News</h1>
+
+		<ul>
+    {news}
+        <li><a href="/news/{id}">{title}</a></li>
+    {/news}
+</ul>
 
 	</div>
 </main>
@@ -236,8 +243,6 @@
 	<div class="environment">
 
 		<p>Page rendered in {elapsed_time} seconds</p>
-
-		<p>Environment: <?= ENVIRONMENT ?></p>
 
 	</div>
 

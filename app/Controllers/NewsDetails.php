@@ -3,21 +3,25 @@
 use App\Models\NewsModel;
 
 
-class Home extends BaseController
+class NewsDetails extends BaseController
 {
 
-	public function index()
+	public function show($id)
 	{
 
 		$newsModel = new NewsModel();
-		$newsArray = $newsModel->findAll();
-		$data['news'] = $newsArray;
+		$news = $newsModel->find($id);
+
+		// var_dump($news);
+
+		$data = $news;
 
 		$parser = \Config\Services::parser();
 
 
 		return $parser->setData($data)
-             ->render('home');
+			 ->render('news-details');
+			 
 
 	}
 
