@@ -28,6 +28,8 @@ He creat una base de dades amb phpmyadmin i dins d'ella he creat les següents t
 
 He definit categoy_id com a foreign key de categories.id a la base de dades usant la pestanya relacions de phpmyadmin.
 
+[TODO] parlar de la relació creada mitjançant codeigniter
+
 # Desenvolupament del backend
 
 Primer he editat el fitxer app/config/Database.php amb les credencials de la base de dades.
@@ -54,7 +56,9 @@ private function genericResponse($data, $msg, $code){
         }
     }
 ```
+
 També he creat les diferents funcions que necessitarem per fer CRUD:
+
 - index()
 - show()
 - create()
@@ -72,7 +76,7 @@ public $news =[
 
 ## Grocery CRUD
 
-Per a instal·lat Grocery CRUD he seguit el vídeo explicatiu de l'autor (https://www.youtube.com/watch?v=h-1q3IItG0I&t=308s&ab_channel=HappyDevelopers) i després he adaptat el controlador i la vista als nostres models (news i categories).
+Per a instal·lat Grocery CRUD he seguit el [_vídeo explicatiu de l'autor_](https://www.youtube.com/watch?v=h-1q3IItG0I&t=308s&ab_channel=HappyDevelopers) i després he adaptat el controlador i la vista als nostres models (news i categories).
 
 Ell reconama desactivar les rutes automàtiques si et dona error i afegir-les manualment. En el meu cas, m'ha funcionat amb les autorutes en true.
 
@@ -84,6 +88,7 @@ Per a la part de la API que opté les notícies d'una categoria específica amb 
 $routes->get('api/(:segment)', 'ApiCategory::show/$1');
 
 $routes->get('api/(:segment)/(:any)', 'ApiCategory::show/$1/$2');
+
 ```
 
 
@@ -186,7 +191,7 @@ public function show($id)
 
 Per al correcte funcionament dels enllaços tant en l'entorn de producció com en el de desenvolupament he fet ús de la variable `app.baseURL` del fitxer `.env` que he cridat al controlador usant `getenv('app.baseURL');`
 
-Aquest document l'he realitzat a partir del README.md del projecte amb el programa Pandoc amb la següent instrucció:
+Aquest document l'he generat a partir del README.md del projecte amb el programa [_Pandoc_](https://pandoc.org/) amb la següent instrucció:
 
 `pandoc -s -N --template=template.latex README.md -o Josep-Vicent-Monjo-Agut-PAC-2.pdf`
 
