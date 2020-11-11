@@ -15,14 +15,11 @@ class NewsDetails extends BaseController
 		// var_dump($news);
 
 		$data = $news;
+		$data['baseurl'] = getenv('app.baseURL');
+		$data['date'] = date("d-m-Y", strtotime($data['date']));
 
-		$parser = \Config\Services::parser();
-
-
-		return $parser->setData($data)
-			 ->render('news-details');
+		return view('news-details', $data);
 			 
-
 	}
 
 	//--------------------------------------------------------------------

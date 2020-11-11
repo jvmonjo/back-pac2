@@ -11,6 +11,7 @@ class Home extends BaseController
 
 		$newsModel = new NewsModel();
 		$newsArray = $newsModel->findAll();
+		$data['baseurl'] = getenv('app.baseURL');
 		$data['news'] = $newsArray;
 
 		$parser = \Config\Services::parser();

@@ -114,3 +114,46 @@ public function show($category = null, $page = null)
         return $this->genericResponse($newsResult, null, 200);
     }
 ```
+
+## Frontend
+
+Per a la part de frontend he creat dues pàgines la Home i la News-details.
+
+Per a cadascuna d'aquestes he creat un fitxer a Controller i un fitxer a views. En el cas de la home he optat per renderitzar usant parser.
+
+```php
+public function index()
+	{
+
+		$newsModel = new NewsModel();
+		$newsArray = $newsModel->findAll();
+		$data['baseurl'] = getenv('app.baseURL');
+		$data['news'] = $newsArray;
+
+		$parser = \Config\Services::parser();
+
+
+		return $parser->setData($data)
+             ->render('home');
+
+    }
+```
+
+Per a la vista de detalls he usat el renderitzat que proporciona la funció view:
+
+```php
+public function show($id)
+	{
+
+		$newsModel = new NewsModel();
+		$news = $newsModel->find($id);
+
+		$data = $news;
+		$data['baseurl'] = getenv('app.baseURL');
+		$data['date'] = date("d-m-Y", strtotime($data['date']));
+
+		return view('news-details', $data);
+			 
+	}
+
+Per al correcte funcionament dels enllaços tant en l'entorn de producció com en el de desenvolupament he fet ús de la variable `app.baseURL` del fitxer `.env` que he cridat al controlador usant `getenv('app.baseURL');`
