@@ -199,10 +199,12 @@ Home: https://eimtcms.eimt.uoc.edu/~josepmonjo/
 
 ## API
 
-- Get news: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
-- Post news: [POST] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
-- Edit news: [PUT, PATCH] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
-- Delete news: [DELETE] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
+- Veure notícies: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
+- Veure notícia específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/news/29
+- Crear notícia: [POST] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
+- Editar notícia: [PUT, PATCH] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
+- Eliminar notícia: [DELETE] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
+- Veure notícies d'una categoria específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/economy
 
 # Anotacions finals
 
