@@ -192,7 +192,7 @@ public function show($id)
 
 Per al correcte funcionament dels enllaços tant en l'entorn de producció com en el de desenvolupament he fet ús de la variable `app.baseURL` del fitxer `.env` que he cridat al controlador usant `getenv('app.baseURL');`
 
-# URL Pública
+# URLs públiques
 
 ## Front end
 
