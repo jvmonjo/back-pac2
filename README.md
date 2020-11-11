@@ -217,7 +217,7 @@ Per a que funcione he hagut d'editar el fitxer `.env` amb la nova `app.baseURL` 
 
 Allò ideal seria que el directori de l'aplicació es trobés al mateix nivell que `/public_html, en lloc d'estar dins, per evitar que estiga públicament accessible però al servidor de proves no tenim permisos per fer-ho.
 
-També he creat un fitxer .htaccess a l'arrel de la carpeta pública per no haver d'usar index.php a la url:
+També he creat un fitxer `.htaccess` a l'arrel de la carpeta pública per no haver d'usar index.php a la url:
 
 ```
 <IfModule mod_rewrite.c>
