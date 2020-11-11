@@ -78,7 +78,7 @@ public $news =[
 
 Per a instal·lat Grocery CRUD he seguit el [_vídeo explicatiu de l'autor_](https://www.youtube.com/watch?v=h-1q3IItG0I&t=308s&ab_channel=HappyDevelopers) i després he adaptat el controlador i la vista als nostres models (news i categories).
 
-Ell reconama desactivar les rutes automàtiques si et dona error i afegir-les manualment. En el meu cas, m'ha funcionat amb les autorutes en true.
+Ell recomana desactivar les rutes automàtiques si et dona error i afegir-les manualment. En el meu cas, m'ha funcionat amb les `autorutes` en `true`.
 
 
 ## Paginació de resultats
@@ -200,11 +200,21 @@ Home: https://eimtcms.eimt.uoc.edu/~josepmonjo/
 ## API
 
 - Veure notícies: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
-- Veure notícia específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/news/29
+- Veure notícia específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/news/{ID}
 - Crear notícia: [POST] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news
 - Editar notícia: [PUT, PATCH] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
 - Eliminar notícia: [DELETE] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/news/{ID}
 - Veure notícies d'una categoria específica: [GET] https://eimtcms.eimt.uoc.edu/~josepmonjo/api/economy
+
+# Desplegament
+
+He pujat tots els fitxers a una carpeta situada a `/public_html/codeigniter`.
+
+Després he copiat els continguts de la carpeta `/public_html/codeigniter/public` a `/public_html`.
+
+Per a que funcione he hagut d'editar el fitxer `.env` amb la nova `app.baseURL` així com les noves credencials de la base de dades i el canvi de environment a `CI_ENVIRONMENT=production`.
+
+Allò ideal seria que el directori de l'aplicació es trobés al mateix nivell que `/public_html, en lloc d'estar dins, per evitar que estiga públicament accessible però al servidor de proves no tenim permisos per fer-ho.
 
 # Anotacions finals
 
