@@ -13,7 +13,6 @@ class NewsModel extends Model
         ->select('news.*, categories.title as category')
         ->join('categories', 'categories.id == news.category_id')
         ->first();
-      
     }
 
 }

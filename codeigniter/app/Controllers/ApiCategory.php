@@ -18,11 +18,8 @@ class ApiCategory extends ResourceController
 
         // obtenim la id de la categoria
         $categories = $db->table('categories');
-
         $categories->where('title', $category);
-
         $queryCategory   = $categories->get();
-
         $catResult = $queryCategory->getResult();
 
         if (!$catResult) {
@@ -30,21 +27,17 @@ class ApiCategory extends ResourceController
         }
 
         $id = $catResult[0]->id;
-
-        
+   
         // obtenim les notícies amb eixa id de categoria
         $news = $db->table('news');
-
         $news->where('category_id', $id);
 
         if ($page) {
             $news->limit(10, ($page - 1) * 10);
         }
-
+        
         $queryNews   = $news->get();
-
         $newsResult = $queryNews->getResult();
-
 
         return $this->genericResponse($newsResult, null, 200);
     }

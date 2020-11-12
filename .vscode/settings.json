@@ -1,4 +1,21 @@
 {
-    "cSpell.language": ",ca",
-    "cSpell.enabled": true
+    "cSpell.language": "en,ca",
+    "cSpell.enabled": true,
+    "cSpell.words": [
+        "Cond",
+        "Pandoc",
+        "appstarter",
+        "autoincrement",
+        "autorutes",
+        "codeigniter",
+        "fancyfoot",
+        "fancyhdr",
+        "fancyhead",
+        "pagestyle",
+        "phpmyadmin",
+        "thepage",
+        "tipatge",
+        "usepackage",
+        "varchar"
+    ]
 }
