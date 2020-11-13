@@ -17,5 +17,7 @@
         "tipatge",
         "usepackage",
         "varchar"
-    ]
+    ],
+    //-------- Pandoc Option Configuration --------// pandoc .pdf output option template that you would like to use
+    "pandoc.pdfOptString": "-s -N -t html --css pandoc.css -o Josep-Vicent-Monjo-Agut-PAC-2.pdf",
 }
